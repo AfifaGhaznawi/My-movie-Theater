@@ -1,0 +1,101 @@
+
+body {
+  margin: 0;
+  background: linear-gradient(to top, #000000, #1a1a1a);
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  text-align: center;
+  .cinema-marquee {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: linear-gradient(to right, #ff0000, #ff9900);
+    padding: 12px 0;
+    border-top: 5px dotted yellow;
+    border-bottom: 5px dotted yellow;
+    box-shadow: 0 0 10px red, 0 0 20px orange;
+    animation: scroll-bounce 6s ease-in-out infinite alternate, blink-lights 1s infinite;
+    text-shadow: 2px 2px 8px black;
+    position: relative;
+  }
+  /* Side to side scrolling (bounce) */
+  @keyframes scroll-bounce {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+  /* Blinking light effect */
+  @keyframes blink-lights {
+    0%, 100% {
+      border-color: yellow;
+      box-shadow: 0 0 10px red, 0 0 20px orange;
+    }
+    50% {
+      border-color: white;
+      box-shadow: 0 0 20px yellow, 0 0 30px red;
+    }
+  } 
+}
+.theater h1 {
+  font-size: 2.5rem;
+  margin-top: 30px;
+  text-shadow: 2px 2px red;
+}
+.screen-border {
+  display: inline-block;
+  padding: 10px;
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 25px 10px #FFD700;
+  margin-top: 30px;
+}
+.blinking-lights {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+.blinking-lights span {
+  width: 15px;
+  height: 15px;
+  background-color: #FFD700;
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: blink 1s infinite alternate;
+}
+.blinking-lights span:nth-child(odd) {
+  animation-delay: 0.3s;
+}
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.3; }
+}
+.screen video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+.controls {
+  margin-top: 15px;
+}
+button {
+  background: #FFD700;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #ffa500;
+}
